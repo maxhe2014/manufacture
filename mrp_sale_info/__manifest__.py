@@ -19,5 +19,6 @@
     "data": [
         "views/mrp_production.xml",
         "views/mrp_workorder.xml",
+        "views/stock_picking.xml",
     ],
 }

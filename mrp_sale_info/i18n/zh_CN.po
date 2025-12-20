@@ -88,3 +88,60 @@ msgstr "工单"
 #, python-format
 msgid "扩展搜索功能，支持客户参考号搜索"
 msgstr "扩展搜索功能，支持客户参考号搜索"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,field_description:mrp_sale_info.field_stock_picking__sale_id
+msgid "Sale order"
+msgstr "销售订单"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,field_description:mrp_sale_info.field_stock_picking__partner_id
+msgid "Customer"
+msgstr "客户"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,field_description:mrp_sale_info.field_stock_picking__commitment_date
+msgid "Commitment Date"
+msgstr "承诺日期"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,field_description:mrp_sale_info.field_stock_picking__client_order_ref
+msgid "Customer Reference"
+msgstr "客户参考号"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,help:mrp_sale_info.field_stock_picking__sale_id
+msgid "关联的销售订单"
+msgstr "关联的销售订单"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,help:mrp_sale_info.field_stock_picking__partner_id
+msgid "销售订单的客户"
+msgstr "销售订单的客户"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,help:mrp_sale_info.field_stock_picking__commitment_date
+msgid "销售订单的承诺交付日期"
+msgstr "销售订单的承诺交付日期"
+
+#. module: mrp_sale_info
+#: model:ir.model.fields,help:mrp_sale_info.field_stock_picking__client_order_ref
+msgid "客户提供的参考号"
+msgstr "客户提供的参考号"
+
+#. module: mrp_sale_info
+#: model_terms:ir.ui.view,arch_db:mrp_sale_info.stock_picking_form_view_inherit
+msgid "销售信息"
+msgstr "销售信息"
+
+#. module: mrp_sale_info
+#: code:addons/mrp_sale_info/models/stock_picking.py:40
+#, python-format
+msgid "计算拣货单据关联的销售订单信息"
+msgstr "计算拣货单据关联的销售订单信息"
+
+#. module: mrp_sale_info
+#: code:addons/mrp_sale_info/models/stock_picking.py:50
+#, python-format
+msgid "扩展搜索功能，支持客户参考号搜索"
+msgstr "扩展搜索功能，支持客户参考号搜索"
