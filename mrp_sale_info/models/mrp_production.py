@@ -3,7 +3,7 @@
 # Copyright 2020 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MrpProduction(models.Model):
@@ -32,3 +32,17 @@ class MrpProduction(models.Model):
     client_order_ref = fields.Char(
         related="sale_id.client_order_ref", string="Customer Reference", store=True
     )
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        """扩展搜索功能，支持客户参考号搜索"""
+        args = args or []
+        domain = []
+        
+        if name:
+            # 搜索客户参考号
+            domain = ['|', ('name', operator, name), ('client_order_ref', operator, name)]
+            
+        return super(MrpProduction, self)._name_search(
+            name, args + domain, operator=operator, limit=limit, name_get_uid=name_get_uid
+        )
