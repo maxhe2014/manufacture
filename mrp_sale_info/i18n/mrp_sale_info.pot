@@ -38,6 +38,11 @@ msgstr ""
 
 #. module: mrp_sale_info
 #: model_terms:ir.ui.view,arch_db:mrp_sale_info.mrp_production_workorder_form_view_inherit
+msgid "Sale information"
+msgstr ""
+
+#. module: mrp_sale_info
+#: model_terms:ir.ui.view,arch_db:mrp_sale_info.mrp_production_workorder_form_view_inherit
 msgid "Sale Information"
 msgstr ""
 
