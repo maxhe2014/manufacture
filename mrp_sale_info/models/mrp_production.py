@@ -15,7 +15,7 @@ class MrpProduction(models.Model):
     )
     sale_id = fields.Many2one(
         comodel_name="sale.order",
-        string="Sale order",
+        string="Sale Order",
         readonly=True,
         store=True,
         related="source_procurement_group_id.sale_id",
@@ -35,12 +35,12 @@ class MrpProduction(models.Model):
 
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
-        """扩展搜索功能，支持客户参考号搜索"""
+        """Extend search functionality to support customer reference search"""
         args = args or []
         domain = []
         
         if name:
-            # 搜索客户参考号
+            # Search by customer reference
             domain = ['|', ('name', operator, name), ('client_order_ref', operator, name)]
             
         return super(MrpProduction, self)._name_search(

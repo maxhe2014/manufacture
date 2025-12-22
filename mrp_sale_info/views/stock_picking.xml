@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- 拣货单据列表视图扩展 -->
+    <!-- Stock Picking Tree View Extension -->
     <record id="stock_picking_tree_view_inherit" model="ir.ui.view">
         <field name="name">Stock Picking Tree with Sale Order</field>
         <field name="model">stock.picking</field>
@@ -15,14 +15,14 @@
         </field>
     </record>
 
-    <!-- 拣货单据表单视图扩展 -->
+    <!-- Stock Picking Form View Extension -->
     <record id="stock_picking_form_view_inherit" model="ir.ui.view">
         <field name="name">Stock Picking Form with Sale Order</field>
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='operations']" position="after">
-                <page string="销售信息" name="sale_info" groups="stock.group_stock_manager">
+                <page string="Sale Information" name="sale_info" groups="stock.group_stock_manager">
                     <group>
                         <group>
                             <field name="sale_id" />
@@ -38,7 +38,7 @@
         </field>
     </record>
 
-    <!-- 拣货单据搜索视图扩展 -->
+    <!-- Stock Picking Search View Extension -->
     <record id="view_picking_internal_search_inherit" model="ir.ui.view">
         <field name="name">Stock Picking Search with Customer Reference</field>
         <field name="model">stock.picking</field>
@@ -50,7 +50,7 @@
         </field>
     </record>
 
-    <!-- 拣货单据看板视图扩展 -->
+    <!-- Stock Picking Kanban View Extension -->
     <record id="stock_picking_kanban_view_inherit" model="ir.ui.view">
         <field name="name">Stock Picking Kanban with Sale Order</field>
         <field name="model">stock.picking</field>

@@ -7,35 +7,35 @@ from odoo import api, fields, models
 class StockPicking(models.Model):
     _inherit = "stock.picking"
 
-    # 使用sale_stock模块提供的sale_id字段，避免重复定义
+    # Use sale_id field provided by sale_stock module to avoid duplicate definition
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         related="sale_id.partner_id",
-        string="客户",
+        string="Customer",
         store=True,
-        help="销售订单的客户"
+        help="Customer of the sale order"
     )
     commitment_date = fields.Datetime(
         related="sale_id.commitment_date",
-        string="承诺日期",
+        string="Commitment Date",
         store=True,
-        help="销售订单的承诺交付日期"
+        help="Promised delivery date of the sale order"
     )
     client_order_ref = fields.Char(
         related="sale_id.client_order_ref",
-        string="客户参考号",
+        string="Customer Reference",
         store=True,
-        help="客户提供的参考号"
+        help="Reference number provided by the customer"
     )
 
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
-        """扩展搜索功能，支持客户参考号搜索"""
+        """Extend search functionality to support customer reference search"""
         args = args or []
         domain = []
         
         if name:
-            # 搜索客户参考号
+            # Search by customer reference
             domain = ['|', ('name', operator, name), ('client_order_ref', operator, name)]
             
         return super(StockPicking, self)._name_search(

@@ -9,7 +9,7 @@ class MrpWorkorder(models.Model):
     _inherit = "mrp.workorder"
 
     sale_id = fields.Many2one(
-        related="production_id.sale_id", string="Sale order", readonly=True, store=True
+        related="production_id.sale_id", string="Sale Order", readonly=True, store=True
     )
     partner_id = fields.Many2one(
         related="sale_id.partner_id", readonly=True, string="Customer", store=True
