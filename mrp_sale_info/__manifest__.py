@@ -21,4 +21,5 @@
         "views/mrp_workorder.xml",
         "views/stock_picking.xml",
     ],
+    "post_init_hook": "mrp_sale_info_post_init_hook",
 }
