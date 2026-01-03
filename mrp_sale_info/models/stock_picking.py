@@ -29,15 +29,12 @@ class StockPicking(models.Model):
     )
 
     @api.model
-    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+    def _name_search(self, name, domain=None, operator='ilike', limit=None, order=None):
         """Extend search functionality to support customer reference search"""
-        args = args or []
-        domain = []
+        domain = domain or []
         
         if name:
             # Search by customer reference
-            domain = ['|', ('name', operator, name), ('client_order_ref', operator, name)]
+            domain = ['|', ('name', operator, name), ('client_order_ref', operator, name)] + domain
             
-        return super(StockPicking, self)._name_search(
-            name, args + domain, operator=operator, limit=limit, name_get_uid=name_get_uid
-        )
+        return super()._name_search("", domain, operator, limit, order)
