@@ -35,6 +35,16 @@ msgid "Component"
 msgstr "组件"
 
 #. module: mrp_bom_attribute_match
+#: model:ir.model.fields,field_description:mrp_bom_attribute_match.field_mrp_eco_bom_change__product_id
+msgid "Component"
+msgstr "组件"
+
+#. module: mrp_bom_attribute_match
+#: model:ir.model.fields,field_description:mrp_bom_attribute_match.field_mrp_eco_bom_change__component_template_id
+msgid "Component (product template)"
+msgstr "组件（产品模板）"
+
+#. module: mrp_bom_attribute_match
 #: model:ir.model.fields,field_description:mrp_bom_attribute_match.field_mrp_bom_line__component_template_id
 msgid "Component (product template)"
 msgstr "组件（产品模板）"
@@ -131,6 +141,14 @@ msgid ""
 "“Match on Attribute” related to the component %(component)s."
 msgstr ""
 "您不能在“应用于变体”字段中使用属性%(attributes)s的属性值，因为这与组件%(component)s相关的“属性匹配”字段使用的是相同的属性。"
+
+#. module: mrp_bom_attribute_match
+#. odoo-python
+#: code:addons/mrp_bom_attribute_match/models/mrp_bom.py:0
+#: code:addons/mrp_bom_attribute_match/models/mrp_eco_bom_change.py:0
+#, python-format
+msgid "Either Product or Component (product template) must be set."
+msgstr "必须设置产品或组件（产品模板）中的一项。"
 
 #~ msgid "Display Name"
 #~ msgstr "显示名称"
